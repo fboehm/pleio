@@ -10,6 +10,8 @@ hk_residuals <- function(pheno, genomat){
   return(residuals(lm1))
 }
 
+
+
 # function to simulate phenotypes from genotype data
 sim_pheno <- function(genomat, beta = 1:8 / 8, sd = 0.1){
   pheno_length <- nrow(genomat)
@@ -34,11 +36,6 @@ for (k in 1:3311){
 }
 
 
-# format matrix as a list
-
-
-
-
 
 # make a matrix of determinants of cross prods
 M <- dim(probs$probs$`19`)[3]
@@ -49,6 +46,26 @@ for (i in 1:M){
   }
 }
 
+min(deter_mat, na.rm = TRUE)
 
+###############
+###############
 
-deter_mat[, 1]
+out2a <- list()
+out2b <- list()
+for (k in 1:3311){
+  out2a[[k]] <- hk_residuals(y1, probs$probs$`19`[, , k])
+  out2b[[k]] <- hk_residuals(y2, probs$probs$`19`[, , k])
+}
+
+deter_mat2 <- matrix(nrow = M, ncol = M)
+out2 <- list()
+for (i in 1:M){
+  out2[[i]] <- cbind(c(out2a[[i]], rep(0, 294)), c(rep(0, 294), out2b[[i]]))
+  for (j in 1:i){
+    deter_mat2[i, j] <- det(t(out2[[i]]) %*% out2[[j]])
+  }
+}
+
+reshape2::melt(deter_mat2)
+
