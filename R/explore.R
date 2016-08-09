@@ -46,7 +46,7 @@ for (i in 1:M){
   }
 }
 
-min(deter_mat, na.rm = TRUE)
+range(deter_mat, na.rm = TRUE)
 
 ###############
 ###############
@@ -68,4 +68,5 @@ for (i in 1:M){
 }
 
 reshape2::melt(deter_mat2)
-
+deter_mat2 - deter_mat -> diff
+range(diff, na.rm = TRUE)
