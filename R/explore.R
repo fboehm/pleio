@@ -1,7 +1,6 @@
 
 load("~/Box Sync/attie/research-notebook/derived_data/probs.RData")
 genomat <- probs$probs$`19`
-
 # Function for input to apply(, MARGIN = 3)
 #ie, how do we treat a matrix of genotype probabilities from a single locus?
 hk_residuals <- function(pheno, genomat){
