@@ -30,11 +30,25 @@ for (k in 1:nmar){
   res_pleio[, , k] <- hk_residuals(yy, probs$probs$`19`[, , k])
 }
 
-# univariate regression #1 & #2 (linkage)
-res_linkage <- array(NA, c(nrow(yy), ncol(yy), nmar))
-for (k in 1:nmar){
-  res_linkage[, 1, k] <- hk_residuals(y1, probs$probs$`19`[, , k])
-  res_linkage[, 2, k] <- hk_residuals(y2, probs$probs$`19`[, , k])
+# in the below code, where we populate res_linkage,
+# we get singular matrix errors. Why?
+# One option: could two loci have identical (294 x 8) matrices?
+#             what would happen if they did?
+#
+# we actually want to use duplicated() here!!
+!duplicated(probs$probs$`19`, MARGIN = 3)
+
+
+#res_linkage <- array(NA, c(nrow(yy), ncol(yy), nmar * (nmar - 1) / 2))
+res_linkage <- list()
+m <- 1
+for (k in 2:200){
+  for (l in 1:(k-1)){
+    res_linkage[[m]] <- hk_residuals(c(y1, y2),
+                                        rbind( probs$probs$`19`[, 1:8, l],
+                                              probs$probs$`19`[, 1:8, k]))
+    m <- m + 1
+  }
 }
 
 
@@ -49,6 +63,7 @@ for (i in 1:nmar){
 }
 
 range(deter_pleio, na.rm = TRUE)
+range(deter_linkage, na.rm = TRUE)
 
 ###############
 ###############
