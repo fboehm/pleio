@@ -1,4 +1,4 @@
-Package: pleio
+Package: pleiotropy
 Type: Package
 Title: Performs likelihood ratio test to distinguish pleiotropy from linkage
 Version: 0.1.0
