@@ -8,8 +8,8 @@
 
 profile_plot <- function(profile1, profile2, marker_positions, col1 = "red", col2 = "blue"){
   df <- data.frame(profile1, profile2, marker_positions)
-  ggplot(df)  +
-    geom_line(colour = col1, aes(x = marker_positions, y = profile1)) +
-    geom_line(colour = col2, aes(x = marker_positions, y = profile2)) +
-    labs(x = "Marker position", y = "Profile lr_stat")
+  ggplot2::ggplot(df)  +
+    ggplot2::geom_line(colour = col1, aes(x = marker_positions, y = profile1)) +
+    ggplot2::geom_line(colour = col2, aes(x = marker_positions, y = profile2)) +
+    ggplot2::labs(x = "Marker position", y = "Profile lr_stat")
 }
