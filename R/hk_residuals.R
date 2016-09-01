@@ -5,5 +5,5 @@
 #' @export
 #'
 hk_residuals <- function(pheno, genomat){
-  pheno - genomat %*% solve(t(genomat) %*% genomat) %*% t(genomat) %*% pheno
+  residuals(lm(pheno ~ genomat))
 }
