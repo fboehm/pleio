@@ -9,9 +9,9 @@ calc_dets(yy, mat1, mat2)
 \arguments{
 \item{yy}{a n x 2 matrix containing two phenotypes}
 
-\item{mat1}{a matrix of genotype (founder) probabilities}
+\item{mat1}{a matrix of genotype (founder) probabilities with first column being all 1's}
 
-\item{mat2}{a matrix of genotype (founder) probabilities}
+\item{mat2}{a matrix of genotype (founder) probabilities with first column being all 1's}
 }
 \description{
 Calculate determinant of 'squared residuals' at two loci for two (ordered) traits
