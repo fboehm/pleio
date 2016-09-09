@@ -13,5 +13,5 @@ profile_plot <- function(profile1, profile2, marker_positions, col1 = "red", col
   ggplot2::ggplot(df)  +
     ggplot2::geom_line(colour = col1, ggplot2::aes(x = marker_positions, y = profile1)) +
     ggplot2::geom_line(colour = col2, ggplot2::aes(x = marker_positions, y = profile2)) +
-    ggplot2::labs(x = "Marker position (Mb)", y = "Profile lr_stat")
+    ggplot2::labs(x = "Marker position (Mb)", y = "Profile LOD")
 }
