@@ -8,9 +8,9 @@ profile_plot(profile1, profile2, marker_positions, col1 = "red",
   col2 = "blue")
 }
 \arguments{
-\item{profile1}{profile lr statistic for trait one}
+\item{profile1}{profile lod statistic for trait one}
 
-\item{profile2}{profile lr statistic for trait two}
+\item{profile2}{profile lod statistic for trait two}
 
 \item{marker_positions}{vector of marker positions (should have length equal to that of profile1 & profile2)}
 
