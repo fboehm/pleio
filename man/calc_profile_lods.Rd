@@ -4,10 +4,12 @@
 \alias{calc_profile_lods}
 \title{Calculate profile LODs for two traits}
 \usage{
-calc_profile_lods(log10det_rss)
+calc_profile_lods(log10det_rss, n_mouse)
 }
 \arguments{
 \item{log10det_rss}{matrix containing log10determinants of RSS}
+
+\item{n_mouse}{sample size}
 }
 \description{
 Calculate profile LODs for two traits
