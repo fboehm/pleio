@@ -10,9 +10,11 @@
 profile_plot <- function(profiles, marker_positions, col1 = "red", col2 = "blue"){
   profile1 <- profiles[[1]]
   profile2 <- profiles[[2]]
-  df <- data.frame(profile1, profile2, marker_positions)
+  joint <- profiles[[3]]
+  df <- data.frame(profile1, profile2, joint, marker_positions)
   ggplot2::ggplot(df)  +
     ggplot2::geom_line(colour = col1, ggplot2::aes(x = marker_positions, y = profile1)) +
     ggplot2::geom_line(colour = col2, ggplot2::aes(x = marker_positions, y = profile2)) +
-    ggplot2::labs(x = "Marker position (Mb)", y = "Profile LOD")
+    ggplot2::geom_line(colour = "black", ggplot2::aes(x = marker_positions, y = joint)) +
+    ggplot2::labs(x = "Marker position (Mb)", y = "LOD")
 }
