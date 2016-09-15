@@ -4,13 +4,10 @@
 \alias{profile_plot}
 \title{Plot profile LR statistics for two traits}
 \usage{
-profile_plot(profile1, profile2, marker_positions, col1 = "red",
-  col2 = "blue")
+profile_plot(profiles, marker_positions, col1 = "red", col2 = "blue")
 }
 \arguments{
-\item{profile1}{profile lod statistic for trait one}
-
-\item{profile2}{profile lod statistic for trait two}
+\item{profiles}{list of profile lod statistics for two traits}
 
 \item{marker_positions}{vector of marker positions (should have length equal to that of profile1 & profile2)}
 

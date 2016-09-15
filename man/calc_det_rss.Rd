@@ -7,7 +7,7 @@
 calc_det_rss(res)
 }
 \arguments{
-\item{res}{an array of residuals}
+\item{res}{an array of residual matrices}
 }
 \description{
 Calculate determinants of cross-product of residuals matrices
