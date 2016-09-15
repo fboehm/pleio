@@ -7,7 +7,7 @@
 #'
 sim_pheno <- function(genomat, beta = 1:8 / 8, sd = 0.05){
   pheno_length <- nrow(genomat)
-  noise <- stats::rnorm(n = pheno_length, mean = 0, sd = sd)
+  noise <- rnorm(n = pheno_length, mean = 0, sd = sd)
   pheno <- genomat %*% beta + noise
   return(pheno)
 }
