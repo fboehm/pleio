@@ -1,6 +1,6 @@
 #' Calculate determinants of cross-product of residuals matrices
 #'
-#' @param res an array of residuals
+#' @param res an array of residual matrices
 #' @export
 
 calc_det_rss <- function(res){
