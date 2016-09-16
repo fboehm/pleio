@@ -3,7 +3,6 @@
 export(calc_det_rss)
 export(calc_lod_list)
 export(calc_profile_lod)
-export(calc_profile_lods)
 export(calc_res)
 export(hk_residuals)
 export(profile_plot)
