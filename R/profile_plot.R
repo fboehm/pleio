@@ -1,6 +1,6 @@
 #' Plot profile LR statistics for two traits
 #'
-#' @param profiles list of profile lod statistics for two traits
+#' @param profiles list containing profile lod statistics for two traits and the joint LOD
 #' @param marker_positions vector of marker positions (should have length equal to that of profile1 & profile2)
 #' @param col1 color of trait 1 plot
 #' @param col2 color of trait 2 plot

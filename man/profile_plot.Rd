@@ -7,7 +7,7 @@
 profile_plot(profiles, marker_positions, col1 = "red", col2 = "blue")
 }
 \arguments{
-\item{profiles}{list of profile lod statistics for two traits}
+\item{profiles}{list containing profile lod statistics for two traits and the joint LOD}
 
 \item{marker_positions}{vector of marker positions (should have length equal to that of profile1 & profile2)}
 

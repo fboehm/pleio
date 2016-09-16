@@ -1,10 +1,10 @@
-#' Calculate profile LODs for two traits
+#' Calculate LODs - two profile and one joint - for two traits
 #'
 #' @param log10det_rss matrix containing log10determinants of RSS
 #' @param n_mouse sample size
 #' @export
 
-calc_profile_lods <- function(log10det_rss, n_mouse){
+calc_lod_list <- function(log10det_rss, n_mouse){
   log10det_rss0 <- diag(log10det_rss)
   log10det_rss_row_mins <- apply(FUN = min, X = log10det_rss, MARGIN = 1)
   # find min value per column of logrss
