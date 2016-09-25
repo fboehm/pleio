@@ -2,7 +2,7 @@
 #'
 #' @param data tibble containing log10determinants of RSS
 #' @param n_mouse sample size
-#' @param true_profile_lik indicator (defaults to TRUE) of whether to calculate true profile lod, ie, by maximizing over the nuisance parameter $\lambda_i$
+#' @param true_profile_lik indicator (defaults to TRUE) of whether to calculate true profile lod, ie, by maximizing over the nuisance parameter, qtl location.
 #' @export
 
 calc_lod <- function(data, n_mouse, true_profile_lik = TRUE){
