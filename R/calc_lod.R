@@ -20,10 +20,10 @@ calc_lod <- function(data, n_mouse, true_profile_lik = TRUE){
   if (true_profile_lik){
     profile1 <- data %>%
       dplyr::group_by(marker2) %>%
-      summarise(profile = min(log10detrss))
+      dplyr::summarise(profile = min(log10detrss))
     profile2 <- data %>%
       dplyr::group_by(marker1) %>%
-      summarise(profile = min(log10detrss))
+      dplyr::summarise(profile = min(log10detrss))
   }
     return(tibble::tibble(lod1 = - n_mouse * (profile1$profile - min(log10detrss0$log10detrss)) / 2,
                         lod2 = - n_mouse * (profile2$profile - min(log10detrss0$log10detrss))/ 2,
