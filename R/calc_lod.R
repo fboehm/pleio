@@ -27,5 +27,5 @@ calc_lod <- function(data, n_mouse, true_profile_lik = TRUE){
   }
     return(tibble::tibble(lod1 = - n_mouse * (profile1$profile - min(log10detrss0$log10detrss)) / 2,
                         lod2 = - n_mouse * (profile2$profile - min(log10detrss0$log10detrss))/ 2,
-                        joint = - n_mouse * (log10detrss0$log10detrss - - min(log10detrss0$log10detrss)) / 2))
+                        joint = - n_mouse * (log10detrss0$log10detrss - min(log10detrss0$log10detrss)) / 2))
 }
