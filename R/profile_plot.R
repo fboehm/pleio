@@ -17,6 +17,5 @@ profile_plot <- function(profiles, marker_positions, col1 = "red", col2 = "blue"
     ggplot2::geom_line(ggplot2::aes(colour = col1, x = marker_positions, y = profile1)) +
     ggplot2::geom_line(ggplot2::aes(colour = col2, x = marker_positions, y = profile2)) +
     ggplot2::geom_line(ggplot2::aes(colour = col3, x = marker_positions, y = joint)) +
-    ggplot2::labs(x = "Marker position (Mb)", y = "LOD") +
-    ggplot2::guide_legend()
+    ggplot2::labs(x = "Marker position (Mb)", y = "LOD")
 }
