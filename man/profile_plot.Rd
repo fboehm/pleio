@@ -4,19 +4,12 @@
 \alias{profile_plot}
 \title{Plot profile LR statistics for two traits}
 \usage{
-profile_plot(profiles, marker_positions, col1 = "red", col2 = "blue",
-  col3 = "black")
+profile_plot(profiles, marker_positions)
 }
 \arguments{
 \item{profiles}{list containing profile lod statistics for two traits and the joint LOD}
 
 \item{marker_positions}{vector of marker positions (should have length equal to that of profile1 & profile2)}
-
-\item{col1}{color of trait 1 plot}
-
-\item{col2}{color of trait 2 plot}
-
-\item{col3}{color of pleiotropy-based trace plot}
 }
 \description{
 Plot profile LR statistics for two traits
