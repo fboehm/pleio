@@ -11,7 +11,7 @@ profile_plot(profiles, marker_positions, simulated_positions = NULL)
 
 \item{marker_positions}{vector of marker positions (should have length equal to that of profile1 & profile2)}
 
-\item{simulated_positions}{vector of length 2 specifying the positions of the two loci in a simulation study}
+\item{simulated_positions}{vector of length 2 (if not NULL) specifying the positions of the two loci in a simulation study}
 }
 \description{
 Plot profile LR statistics for two traits
