@@ -11,7 +11,7 @@ profile_plot <- function(profiles, marker_positions, trait1name = "Simulated tra
   profile1 <- profiles[, 1]
   profile2 <- profiles[, 2]
   joint <- profiles[, 3]
-  df <- tibble::tibble(profile1, profile2, joint, marker_positions)
+  df <- data.frame(profile1, profile2, joint, marker_positions)
   if (is.null(qtl_positions)){
     pp <- ggplot2::ggplot(df)  +
       ggplot2::geom_line(ggplot2::aes(colour = trait1name, x = marker_positions, y = profile1), linetype = 2) +
