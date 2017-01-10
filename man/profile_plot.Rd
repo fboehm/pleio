@@ -12,6 +12,10 @@ profile_plot(profiles, marker_positions, trait1name = "Simulated trait 1",
 
 \item{marker_positions}{vector of marker positions (should have length equal to that of lod1 & lod2)}
 
+\item{trait1name}{character vector of length 1 that specifies the name of trait 1}
+
+\item{trait2name}{character vector of length 1 that specifies the name of trait 2}
+
 \item{qtl_positions}{vector of length 2 (if not NULL) specifying the positions of the two loci}
 }
 \description{
