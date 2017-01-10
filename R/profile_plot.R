@@ -9,8 +9,8 @@
 
 profile_plot <- function(profiles, marker_positions, trait1name = "Simulated trait 1", 
                          trait2name = "Simulated trait 2", qtl_positions = NULL){
-  df <- dplyr::bind_cols(profiles, tibble::as_tibble(marker_positions)) dplyr::`%>%`()
-    dplyr::rename(marker_positions = value)
+  df1 <- dplyr::bind_cols(profiles, tibble::as_tibble(marker_positions))
+  df <-  dplyr::rename(df1, marker_positions = value)
   pp <- ggplot2::ggplot(df)  +
     ggplot2::geom_line(ggplot2::aes(colour = trait1name, x = marker_positions, y = lod1), 
                          linetype = 2) +
