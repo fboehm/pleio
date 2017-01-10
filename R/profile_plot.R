@@ -7,7 +7,7 @@
 
 profile_plot <- function(profiles, marker_positions, trait1name = "Simulated trait 1", 
                          trait2name = "Simulated trait 2", qtl_positions = NULL){
-  df <- dplyr::bind_cols(profiles, as_tibble(marker_positions)) %>%
+  df <- dplyr::bind_cols(profiles, tibble::as_tibble(marker_positions)) %>%
     dplyr::rename(marker_positions = value)
   if (is.null(qtl_positions)){
     pp <- ggplot2::ggplot(df)  +
