@@ -13,7 +13,6 @@ RoxygenNote: 5.0.1
 Imports:
     ggplot2,
     stats,
-    tibble
-Depends: 
+    tibble,
     magrittr,
     dplyr

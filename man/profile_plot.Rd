@@ -4,14 +4,15 @@
 \alias{profile_plot}
 \title{Plot profile LR statistics for two traits}
 \usage{
-profile_plot(profiles, marker_positions, simulated_positions = NULL)
+profile_plot(profiles, marker_positions, trait1name = "Simulated trait 1",
+  trait2name = "Simulated trait 2", qtl_positions = NULL)
 }
 \arguments{
-\item{profiles}{list containing profile lod statistics for two traits and the joint LOD}
+\item{profiles}{n x 3 tibble containing profile lod statistics for two traits and the joint LOD}
 
-\item{marker_positions}{vector of marker positions (should have length equal to that of profile1 & profile2)}
+\item{marker_positions}{vector of marker positions (should have length equal to that of lod1 & lod2)}
 
-\item{simulated_positions}{vector of length 2 (if not NULL) specifying the positions of the two loci in a simulation study}
+\item{qtl_positions}{vector of length 2 (if not NULL) specifying the positions of the two loci}
 }
 \description{
 Plot profile LR statistics for two traits
