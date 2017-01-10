@@ -6,26 +6,27 @@
 #' @export
 
 
-profile_plot <- function(profiles, marker_positions, simulated_positions = NULL){
+profile_plot <- function(profiles, marker_positions, trait1name = "Simulated trait 1", 
+                         trait2name = "Simulated trait 2", qtl_positions = NULL){
   profile1 <- profiles[, 1]
   profile2 <- profiles[, 2]
   joint <- profiles[, 3]
-  df <- data.frame(profile1, profile2, joint, marker_positions)
-  if (is.null(simulated_positions)){
+  df <- tibble::tibble(profile1, profile2, joint, marker_positions)
+  if (is.null(qtl_positions)){
     pp <- ggplot2::ggplot(df)  +
-      ggplot2::geom_line(ggplot2::aes(colour = "Profile1", x = marker_positions, y = profile1)) +
-      ggplot2::geom_line(ggplot2::aes(colour = "Profile2", x = marker_positions, y = profile2)) +
-      ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", x = marker_positions, y = joint)) +
+      ggplot2::geom_line(ggplot2::aes(colour = trait1name, x = marker_positions, y = profile1), linetype = 2) +
+      ggplot2::geom_line(ggplot2::aes(colour = trait2name, x = marker_positions, y = profile2), linetype = 3) +
+      ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", x = marker_positions, y = joint), linetype = 1) +
       ggplot2::labs(colour = "Legend", x = "Marker position (Mb)", y = "LOD")
   }
-  if (!is.null(simulated_positions)){
+  if (!is.null(qtl_positions)){
     pp <- ggplot2::ggplot(df)  +
-      ggplot2::geom_line(ggplot2::aes(colour = "Profile1", x = marker_positions, y = profile1)) +
-      ggplot2::geom_line(ggplot2::aes(colour = "Profile2", x = marker_positions, y = profile2)) +
-      ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", x = marker_positions, y = joint)) +
+      ggplot2::geom_line(ggplot2::aes(colour = trait1name, x = marker_positions, y = profile1), linetype = 2) +
+      ggplot2::geom_line(ggplot2::aes(colour = trait2name, x = marker_positions, y = profile2), linetype = 3) +
+      ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", x = marker_positions, y = joint), linetype = 1) +
       ggplot2::labs(colour = "Legend", x = "Marker position (Mb)", y = "LOD") +
-      ggplot2::geom_vline(xintercept = simulated_positions[1]) +
-      ggplot2::geom_vline(xintercept = simulated_positions[2])
+      ggplot2::geom_vline(xintercept = qtl_positions[1]) +
+      ggplot2::geom_vline(xintercept = qtl_positions[2])
   }
   return(pp)
 }
