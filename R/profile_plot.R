@@ -12,13 +12,13 @@ profile_plot <- function(profiles, marker_positions, trait1name = "Simulated tra
   df1 <- dplyr::bind_cols(profiles, tibble::as_tibble(marker_positions))
   df <-  dplyr::rename(df1, marker_positions = value)
   pp <- ggplot2::ggplot(df)  +
-    ggplot2::geom_line(ggplot2::aes(colour = trait1name, x = marker_positions, y = lod1), 
-                         linetype = 2) +
-    ggplot2::geom_line(ggplot2::aes(colour = trait2name, x = marker_positions, y = lod2), 
-                         linetype = 3) +
-    ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", x = marker_positions, y = joint), 
-                         linetype = 1) +
-    ggplot2::labs(colour = "Legend", x = "Marker position (Mb)", y = "LOD") +
+    ggplot2::geom_line(ggplot2::aes(colour = trait1name, linetype = trait1name,
+                                    x = marker_positions, y = lod1), linetype = 2) +
+    ggplot2::geom_line(ggplot2::aes(colour = trait2name, linetype = trait2name, 
+                                    x = marker_positions, y = lod2), linetype = 3) +
+    ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", linetype = "Pleiotropy", 
+                                    x = marker_positions, y = joint), linetype = 1) +
+    ggplot2::labs(colour = "Legend", linetype = "Legend", x = "Marker position (Mb)", y = "LOD") +
     ggplot2::geom_vline(xintercept = qtl_positions[1]) +
     ggplot2::geom_vline(xintercept = qtl_positions[2])
   return(pp)
