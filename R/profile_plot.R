@@ -18,7 +18,7 @@ profile_plot <- function(profiles, marker_positions, trait1name = "Simulated tra
                                     x = marker_positions, y = lod2), linetype = 3) +
     ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", linetype = "Pleiotropy", 
                                     x = marker_positions, y = joint), linetype = 1) +
-    ggplot2::labs(linetype = "Legend", x = "Marker position (Mb)", y = "LOD") +
+    ggplot2::labs(colour = "Legend", x = "Marker position (Mb)", y = "LOD") +
     ggplot2::geom_vline(xintercept = qtl_positions[1]) +
     ggplot2::geom_vline(xintercept = qtl_positions[2])
   return(pp)
