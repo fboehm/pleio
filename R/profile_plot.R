@@ -12,11 +12,11 @@ profile_plot <- function(profiles, marker_positions, trait1name = "Simulated tra
   df1 <- dplyr::bind_cols(profiles, tibble::as_tibble(marker_positions))
   df <-  dplyr::rename(df1, marker_positions = value)
   pp <- ggplot2::ggplot(df)  +
-    ggplot2::geom_line(ggplot2::aes(colour = trait1name, linetype = trait1name,
+    ggplot2::geom_line(ggplot2::aes(colour = "blue",
                                     x = marker_positions, y = lod1, linetype = 2)) +
-    ggplot2::geom_line(ggplot2::aes(colour = trait2name, linetype = trait2name, 
+    ggplot2::geom_line(ggplot2::aes(colour = "green",
                                     x = marker_positions, y = lod2, linetype = 3)) +
-    ggplot2::geom_line(ggplot2::aes(colour = "Pleiotropy", linetype = "Pleiotropy", 
+    ggplot2::geom_line(ggplot2::aes(colour = "red",  
                                     x = marker_positions, y = joint, linetype = 1)) +
     ggplot2::labs(x = "Marker position (Mb)", y = "LOD", colour = "Legend", linetype = "Legend") +
     ggplot2::geom_vline(xintercept = qtl_positions[1]) +
