@@ -4,7 +4,7 @@
 \alias{calc_lod}
 \title{Calculate LODs - two profile and one joint - for two traits}
 \usage{
-calc_lod(data, n_mouse, true_profile_lik = TRUE)
+calc_lod(data, n_mouse)
 }
 \arguments{
 \item{data}{tibble containing log10determinants of RSS}
