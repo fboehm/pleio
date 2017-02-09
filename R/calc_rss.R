@@ -17,9 +17,9 @@ calc_rss_one <- function(y, genomat){
 #' @param stop index for stop of scan
 #' @export
 calc_rss <- function(y, genoarray, start , stop){
-  rss <- vector(length = stop - start + 1)
+  rss <- vector(length = dim(genoarray)[3])
   for (i in start:stop){
-    rss[i - start + 1] <- calc_rss_one(y, genoarray[ , , i])
+    rss[i] <- calc_rss_one(y, genoarray[ , , i])
   }
   return(rss)
 }
