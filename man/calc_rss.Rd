@@ -4,16 +4,12 @@
 \alias{calc_rss}
 \title{One-dimensional scan over a region of interest using only intercept and genotypes}
 \usage{
-calc_rss(y, genoarray, start, stop)
+calc_rss(y, genoarray)
 }
 \arguments{
 \item{y}{a vector of n phenotype values}
 
 \item{genoarray}{a three-dimensional array of genotypes, like `probs$probs$`1``}
-
-\item{start}{index for start of scan}
-
-\item{stop}{index for stop of scan}
 }
 \description{
 One-dimensional scan over a region of interest using only intercept and genotypes

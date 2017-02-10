@@ -4,6 +4,7 @@
 #' @param genomat a single genotype matrix, n x 8
 #' @export
 calc_rss_one <- function(y, genomat){
+  genomat[, 1] <- 1 # replace first column in matrix with all 1's.
   res <- y - genomat %*% (solve(t(genomat) %*% genomat)) %*% t(genomat) %*% y
   return(sum(res^2))
 }
@@ -13,12 +14,11 @@ calc_rss_one <- function(y, genomat){
 #' 
 #' @param y a vector of n phenotype values 
 #' @param genoarray a three-dimensional array of genotypes, like `probs$probs$`1``
-#' @param start index for start of scan
-#' @param stop index for stop of scan
 #' @export
-calc_rss <- function(y, genoarray, start , stop){
-  rss <- vector(length = dim(genoarray)[3])
-  for (i in start:stop){
+calc_rss <- function(y, genoarray){
+  k <- dim(genoarray)[3]
+  rss <- vector(length = k)
+  for (i in 1:k){
     rss[i] <- calc_rss_one(y, genoarray[ , , i])
   }
   return(rss)
