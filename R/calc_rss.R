@@ -4,10 +4,10 @@
 #' @param genomat a single genotype matrix, n x 8
 #' @export
 calc_rss_one <- function(y, genomat){
-  genomat[, 1] <- 1 # replace first column in matrix with all 1's.
   res <- y - genomat %*% (solve(t(genomat) %*% genomat)) %*% t(genomat) %*% y
   return(sum(res^2))
 }
+
 
 
 #' One-dimensional scan over a region of interest using only intercept and genotypes
