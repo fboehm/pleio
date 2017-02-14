@@ -8,7 +8,7 @@ calc_res <- function(yy, geno_array){
   n_marker <- dim(geno_array)[3]
   res <- array(NA, c(nrow(yy), ncol(yy), n_marker))
   for (i in 1:n_marker){
-    res[ , , i] <- hk_residuals(yy, cbind(1, geno_array[ , -1, i]))
+    res[ , , i] <- hk_residuals(yy, geno_array[ , , i])
   }
   return(res)
 }

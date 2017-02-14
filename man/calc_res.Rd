@@ -4,16 +4,12 @@
 \alias{calc_res}
 \title{Calculate an array of residuals using Haley-Knott regression}
 \usage{
-calc_res(yy, geno_array, start, stop)
+calc_res(yy, geno_array)
 }
 \arguments{
 \item{yy}{n x 2 data matrix}
 
 \item{geno_array}{genotype probabilities array}
-
-\item{start}{marker index for scan start}
-
-\item{stop}{marker index for scan stop}
 }
 \description{
 Calculate an array of residuals using Haley-Knott regression
