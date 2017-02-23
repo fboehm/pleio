@@ -6,15 +6,12 @@
 
 calc_lod <- function(data, n_mouse){
   # define log10detrss0
-  log10detrss0 <- data %>%
-    dplyr::filter(marker1 == marker2)
-  profile1 <- data %>%
-    dplyr::group_by(marker1) %>%
-    dplyr::summarise(profile = min(log10detrss))
-  profile2 <- data %>%
-    dplyr::group_by(marker2) %>%
-    dplyr::summarise(profile = min(log10detrss))
-    return(tibble::tibble(lod1 = - n_mouse * (profile1$profile - min(log10detrss0$log10detrss)) / 2,
+  log10detrss0 <- dplyr::filter(data, marker1 == marker2)
+  pre1 <- dplyr::group_by(data, marker1)
+  profile1 <- dplyr::summarise(pre1, profile = min(log10detrss))
+  pre2 <- dplyr::group_by(data, marker2)
+  profile2 <- dplyr::summarise(pre2, profile = min(log10detrss))
+  return(tibble::tibble(lod1 = - n_mouse * (profile1$profile - min(log10detrss0$log10detrss)) / 2,
                         lod2 = - n_mouse * (profile2$profile - min(log10detrss0$log10detrss))/ 2,
                         joint = - n_mouse * (log10detrss0$log10detrss - min(log10detrss0$log10detrss)) / 2))
 }
