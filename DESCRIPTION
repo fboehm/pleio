@@ -16,3 +16,4 @@ Imports:
     tibble,
     magrittr,
     dplyr
+Suggests: testthat
