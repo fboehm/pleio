@@ -5,5 +5,5 @@
 #' @export
 #' @import stats
 hk_residuals <- function(pheno, genomat){
-  residuals(lm(pheno ~ genomat))
+  residuals(lm(pheno ~ genomat, na.action = "na.omit"))
 }
