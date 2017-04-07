@@ -15,5 +15,6 @@ Imports:
     stats,
     tibble,
     magrittr,
-    dplyr
+    dplyr,
+    MASS
 Suggests: testthat

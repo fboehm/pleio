@@ -27,3 +27,4 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 pleiotropy.Rproj
+.gitignore.swp
