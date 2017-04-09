@@ -1,6 +1,6 @@
 Package: pleiotropy
 Type: Package
-Title: Performs likelihood ratio test to distinguish pleiotropy from linkage
+Title: Likelihood ratio test to distinguish pleiotropy from linkage
 Version: 0.1.0
 Authors@R: person("Fred", "Boehm", email = "frederick.boehm@gmail.com",
                   role = c("aut", "cre"))
@@ -16,5 +16,6 @@ Imports:
     tibble,
     magrittr,
     dplyr,
-    MASS
+    MASS,
+    broman
 Suggests: testthat
