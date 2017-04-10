@@ -4,7 +4,8 @@
 #' @param genomat a single genotype matrix, n x 8
 #' @export
 calc_rss_one <- function(y, genomat){
-  res <- y - genomat %*% (solve(t(genomat) %*% genomat)) %*% t(genomat) %*% y
+  res <- lm(y ~ genomat) %>%
+    residuals()
   return(sum(res^2))
 }
 
