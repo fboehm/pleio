@@ -17,5 +17,6 @@ Imports:
     magrittr,
     dplyr,
     MASS,
-    broman
+    broman,
+    regress
 Suggests: testthat
