@@ -5,6 +5,7 @@
 #' @param X2 genotype probabilities for second locus, one row per subject
 #' @param Kmat a kinship matrix
 #' @param reml indicator of whether to use REML method
+#' @export
 
 fit1_bvlmm <- function(Y, X1, X2, Kmat, reml = FALSE){
   # assemble Xmat design matrix

@@ -7,7 +7,7 @@
 #' 
 
 prep_pheno <- function(phenotype, alpha = 0.02, transform = log){
-  phenotype %>% 
-    broman::winsorize(q = alpha) %>%
-    transform()
+    foo <- broman::winsorize(phenotype, q = alpha)
+    out <- transform(foo)
+    return(out)
 }
