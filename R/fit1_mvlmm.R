@@ -8,10 +8,11 @@
 
 fit1_bvlmm <- function(Y, X1, X2, Kmat, reml = FALSE){
   # assemble Xmat design matrix
-  n <- nrow (Y)
-  Xmat <- matrix(0, nrow = 2 * n, ncol = 16)
-  Xmat[1:n, 1:8] <- X1
-  Xmat[(n + 1):(2 * n), 9:16] <- X2
+  n <- nrow(Y)
+  n_founders <- ncol(X1)
+  Xmat <- matrix(0, nrow = 2 * n, ncol = 2 * n_founders)
+  Xmat[1:n, 1:n_founders] <- X1
+  Xmat[(n + 1):(2 * n), (n_founders + 1):(2 * n_founders)] <- X2
   # fit mvlmm
   In <- diag(1, n)
   V1 <- matrix(c(1, 0, 0, 0), nrow = 2)
