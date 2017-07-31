@@ -16,4 +16,3 @@ prep_pheno(phenotype, alpha = 0.02, transform = log)
 \description{
 Prepare phenotype for use with scan functions
 }
-

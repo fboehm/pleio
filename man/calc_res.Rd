@@ -14,4 +14,3 @@ calc_res(yy, geno_array)
 \description{
 Calculate an array of residuals using Haley-Knott regression
 }
-

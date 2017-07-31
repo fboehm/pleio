@@ -14,4 +14,3 @@ calc_rss_one(y, genomat)
 \description{
 Calculate RSS for a single locus and a single trait
 }
-

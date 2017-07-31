@@ -16,4 +16,3 @@ sim_pheno(genomat, beta = 1:8/8, sd = 0.05)
 \description{
 Simulate phenotypes from genotype data
 }
-

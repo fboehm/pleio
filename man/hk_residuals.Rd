@@ -14,4 +14,3 @@ hk_residuals(pheno, genomat)
 \description{
 Calculate residuals with Haley-Knott regression
 }
-

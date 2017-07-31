@@ -9,7 +9,7 @@ Description: These functions arose during my initial efforts to discern pleiotro
 License: MIT License + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Imports:
     ggplot2,
     stats,

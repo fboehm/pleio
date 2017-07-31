@@ -14,4 +14,3 @@ calc_rss(y, genoarray)
 \description{
 One-dimensional scan over a region of interest using only intercept and genotypes
 }
-

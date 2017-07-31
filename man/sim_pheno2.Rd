@@ -16,4 +16,3 @@ sim_pheno2(genomat, bmat, Sigma)
 \description{
 Simulate two phenotypes simultaneously
 }
-

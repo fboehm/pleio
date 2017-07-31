@@ -12,4 +12,3 @@ calc_det_rss(res)
 \description{
 Calculate determinants of cross-product of residuals matrices
 }
-

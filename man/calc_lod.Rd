@@ -14,4 +14,3 @@ calc_lod(data, n_mouse)
 \description{
 Calculate LODs - two profile and one joint - for two traits
 }
-
