@@ -4,7 +4,7 @@
 \alias{fit1_bvlmm}
 \title{Fit a 2-locus, multivariate trait linear mixed effects model}
 \usage{
-fit1_bvlmm(Y, X1, X2, Kmat, reml = FALSE)
+fit1_bvlmm(Y, X1, X2, Kmat, reml = TRUE)
 }
 \arguments{
 \item{Y}{a phenotypes matrix with one row per subject and one trait per column}

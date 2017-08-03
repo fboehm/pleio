@@ -7,7 +7,7 @@
 #' @param reml indicator of whether to use REML method
 #' @export
 
-fit1_bvlmm <- function(Y, X1, X2, Kmat, reml = FALSE){
+fit1_bvlmm <- function(Y, X1, X2, Kmat, reml = TRUE){
   # assemble Xmat design matrix
   n <- nrow(Y)
   n_founders <- ncol(X1)
@@ -20,20 +20,16 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat, reml = FALSE){
   V2 <- matrix(c(0, 0, 0, 1), nrow = 2)
   V3 <- matrix(c(0, 1, 1, 0), nrow = 2)
   if (reml == TRUE) {
-    out <- regress::regress(as.matrix(as.vector(Y)) ~ Xmat - 1,
-                 ~ diag(1, 2) %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
-                 identity = FALSE,
-                 kernel = NULL, 
-                 pos = c(TRUE, TRUE, TRUE, FALSE)
-                 )
+    kernel <- NULL
   }
   else {
-    out <- regress::regress(as.matrix(as.vector(Y)) ~ Xmat - 1,
-                            ~ diag(1, 2) %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
-                            identity = FALSE,
-                            kernel = 0, 
-                            pos = c(TRUE, TRUE, TRUE, FALSE)
-                            )
-    }
+    kernel <- 0
+  }
+  out <- regress::regress(as.matrix(as.vector(Y)) ~ Xmat - 1,
+                 ~ V1 %x% Kmat + V2 %x% Kmat + V3 %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
+                 identity = FALSE,
+                 kernel = NULL, 
+                 pos = c(TRUE, TRUE, FALSE, TRUE, TRUE, FALSE)
+                 )
   return(out)
 }
