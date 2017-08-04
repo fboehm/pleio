@@ -37,8 +37,9 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat, reml = TRUE){
                  #~ diag(1, 2) %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
                  identity = FALSE,
                  kernel = kernel, 
-                 pos = c(TRUE, TRUE, FALSE, TRUE, TRUE, FALSE)
+                 pos = c(TRUE, TRUE, FALSE, TRUE, TRUE, FALSE),
                  #pos = c(TRUE, TRUE, TRUE, FALSE)
+                 verbose = 10
                  )
   return(out)
 }
