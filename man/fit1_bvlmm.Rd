@@ -15,7 +15,7 @@ fit1_bvlmm(Y, X1, X2, Kmat, reml = TRUE)
 
 \item{Kmat}{a kinship matrix}
 
-\item{reml}{indicator of whether to use REML method}
+\item{reml}{indicator of whether to use REML method (or ML method)}
 }
 \description{
 Fit a 2-locus, multivariate trait linear mixed effects model
