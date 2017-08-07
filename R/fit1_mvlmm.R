@@ -30,11 +30,8 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat){
   out <- regress::regress(as.matrix(as.vector(Y)) ~ Xmat - 1,
    #              ~ K1 + K2 + K3 + I1 + I2 + I3,
                  ~ K12 + K3 + I1 + I2 + I3,
-                #~ diag(1, 2) %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
                  identity = FALSE,
-
                  pos = c(TRUE, FALSE, TRUE, TRUE, FALSE),
-                 #pos = c(TRUE, TRUE, TRUE, FALSE)
                  verbose = 10,
                  start = c(1, 0, 1, 1, 0)
                  )
