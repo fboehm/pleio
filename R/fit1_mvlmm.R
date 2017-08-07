@@ -20,12 +20,7 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat, kernel = NULL){
   V2 <- matrix(c(0, 0, 0, 1), nrow = 2)
   V12 <- matrix(c(1, 0, 0, 1), nrow = 2)
   V3 <- matrix(c(0, 1, 1, 0), nrow = 2)
-  if (reml == TRUE) {
-    kernel <- NULL
-  }
-  else {
-    kernel <- 0
-  }
+  
   K12 <- V12 %x% Kmat
   K3 <- V3 %x% Kmat
   I1 <- V1 %x% In
@@ -37,7 +32,7 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat, kernel = NULL){
                  ~ K12 + K3 + I1 + I2 + I3,
                 #~ diag(1, 2) %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
                  identity = FALSE,
-                 
+                 kernel = kernel, 
                  pos = c(TRUE, FALSE, TRUE, TRUE, FALSE),
                  #pos = c(TRUE, TRUE, TRUE, FALSE)
                  verbose = 10,
