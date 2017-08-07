@@ -7,7 +7,7 @@
 #' @param kernel value of kernel to be passed to regress()
 #' @export
 
-fit1_bvlmm <- function(Y, X1, X2, Kmat, kernel = NULL){
+fit1_bvlmm <- function(Y, X1, X2, Kmat){
   # assemble Xmat design matrix
   n <- nrow(Y)
   n_founders <- ncol(X1)
@@ -32,7 +32,7 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat, kernel = NULL){
                  ~ K12 + K3 + I1 + I2 + I3,
                 #~ diag(1, 2) %x% Kmat + V1 %x% In + V2 %x% In + V3 %x% In,
                  identity = FALSE,
-                 kernel = kernel, 
+
                  pos = c(TRUE, FALSE, TRUE, TRUE, FALSE),
                  #pos = c(TRUE, TRUE, TRUE, FALSE)
                  verbose = 10,

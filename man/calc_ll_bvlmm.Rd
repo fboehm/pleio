@@ -2,19 +2,19 @@
 % Please edit documentation in R/calc_ll_bvlmm.R
 \name{calc_ll_bvlmm}
 \alias{calc_ll_bvlmm}
-\title{Calculate log-likelihood for a LMM}
+\title{Calculate log-likelihood for a bivariate LMM}
 \usage{
 calc_ll_bvlmm(yvec, Xmat, betahat, var)
 }
 \arguments{
-\item{yvec}{a vector of phenotype values}
+\item{yvec}{a vector of phenotype values, after removing NA values}
 
-\item{Xmat}{a design matrix}
+\item{Xmat}{a design matrix with needed number of rows}
 
-\item{betahat}{estimate of beta}
+\item{betahat}{estimate of beta; a vector of length 16}
 
-\item{var}{a covariance matrix}
+\item{var}{a covariance matrix with needed dimensions}
 }
 \description{
-Calculate log-likelihood for a LMM
+Calculate log-likelihood for a bivariate LMM
 }

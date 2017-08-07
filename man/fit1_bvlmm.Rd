@@ -4,7 +4,7 @@
 \alias{fit1_bvlmm}
 \title{Fit a 2-locus, multivariate trait linear mixed effects model}
 \usage{
-fit1_bvlmm(Y, X1, X2, Kmat, reml = TRUE)
+fit1_bvlmm(Y, X1, X2, Kmat)
 }
 \arguments{
 \item{Y}{a phenotypes matrix with one row per subject and one trait per column}
@@ -15,7 +15,7 @@ fit1_bvlmm(Y, X1, X2, Kmat, reml = TRUE)
 
 \item{Kmat}{a kinship matrix}
 
-\item{reml}{indicator of whether to use REML method (or ML method)}
+\item{kernel}{value of kernel to be passed to regress()}
 }
 \description{
 Fit a 2-locus, multivariate trait linear mixed effects model
