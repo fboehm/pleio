@@ -4,10 +4,10 @@
 #' @param X1 genotype probabilities for first locus, one row per subject
 #' @param X2 genotype probabilities for second locus, one row per subject
 #' @param Kmat a kinship matrix
-#' @param kernel value of kernel to be passed to regress()
+#' @param tol value of tol to be passed to regress()
 #' @export
 
-fit1_bvlmm <- function(Y, X1, X2, Kmat){
+fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.0000001){
   # assemble Xmat design matrix
   n <- nrow(Y)
   n_founders <- ncol(X1)
@@ -34,7 +34,8 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat){
                  identity = FALSE,
                  pos = c(TRUE, TRUE, FALSE, TRUE, TRUE, FALSE),
                  verbose = 10,
-                 start = c(1, 1, 0, 1, 1, 0)
+                 start = c(1, 1, 0, 1, 1, 0), 
+                 tol = tol
                  )
   return(out)
 }

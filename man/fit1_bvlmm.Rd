@@ -4,7 +4,7 @@
 \alias{fit1_bvlmm}
 \title{Fit a 2-locus, multivariate trait linear mixed effects model}
 \usage{
-fit1_bvlmm(Y, X1, X2, Kmat)
+fit1_bvlmm(Y, X1, X2, Kmat, tol = 1e-07)
 }
 \arguments{
 \item{Y}{a phenotypes matrix with one row per subject and one trait per column}
@@ -15,7 +15,7 @@ fit1_bvlmm(Y, X1, X2, Kmat)
 
 \item{Kmat}{a kinship matrix}
 
-\item{kernel}{value of kernel to be passed to regress()}
+\item{tol}{value of tol to be passed to regress()}
 }
 \description{
 Fit a 2-locus, multivariate trait linear mixed effects model
