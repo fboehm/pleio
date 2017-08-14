@@ -4,7 +4,7 @@
 \alias{fit1_bvlmm}
 \title{Fit a 2-locus, multivariate trait linear mixed effects model}
 \usage{
-fit1_bvlmm(Y, X1, X2, Kmat, tol = 1e-07)
+fit1_bvlmm(Y, X1, X2, Kmat, tol = 1e-07, maxcyc = 100, verbose = 10)
 }
 \arguments{
 \item{Y}{a phenotypes matrix with one row per subject and one trait per column}
@@ -16,6 +16,10 @@ fit1_bvlmm(Y, X1, X2, Kmat, tol = 1e-07)
 \item{Kmat}{a kinship matrix}
 
 \item{tol}{value of tol to be passed to regress()}
+
+\item{maxcyc}{value of maxcyc passed to regress()}
+
+\item{verbose}{value of verbose passed to regress()}
 }
 \description{
 Fit a 2-locus, multivariate trait linear mixed effects model
