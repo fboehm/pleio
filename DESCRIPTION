@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: person("Fred", "Boehm", email = "frederick.boehm@gmail.com",
                   role = c("aut", "cre"))
 Maintainer: Fred Boehm <frederick.boehm@gmail.com>
-Description: These functions arose during my initial efforts to discern pleiotropy from linkage.
+Description: These functions arose during my initial efforts to discern pleiotropy from close linkage.
 License: MIT License + file LICENSE
 Encoding: UTF-8
 LazyData: true

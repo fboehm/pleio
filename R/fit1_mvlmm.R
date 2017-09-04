@@ -8,9 +8,10 @@
 #' @param maxcyc value of maxcyc passed to regress()
 #' @param verbose value of verbose passed to regress()
 #' @param start value of start passed to regress()
+#' @param taper value of taper passed to regress()
 #' @export
 
-fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.0000001, maxcyc = 100, verbose = 10, start = c(0.1, 0.1, 0, 1, 1, 0)){
+fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.0000001, maxcyc = 100, verbose = 10, start = c(0.1, 0.1, 0, 1, 1, 0), taper = rep(1 / 2, maxcyc)){
   # assemble Xmat design matrix
   n <- nrow(Y)
   n_founders <- ncol(X1)
@@ -39,7 +40,8 @@ fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.0000001, maxcyc = 100, verbose =
                  verbose = verbose,
                  start = start, 
                  tol = tol, 
-                 maxcyc = maxcyc
+                 maxcyc = maxcyc, 
+                 taper = taper
                  )
   return(out)
 }
