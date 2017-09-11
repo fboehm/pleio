@@ -18,5 +18,9 @@ Imports:
     dplyr,
     MASS,
     broman,
-    regress
-Suggests: testthat
+    regress,
+    mvtnorm
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
