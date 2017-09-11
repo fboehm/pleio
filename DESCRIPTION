@@ -20,7 +20,8 @@ Imports:
     broman,
     regress,
     mvtnorm,
-    lubridate
+    lubridate,
+    rlang
 Suggests: testthat,
     knitr,
     rmarkdown
