@@ -11,7 +11,7 @@ sim_pheno_lmm(genomat, bmat, Sigma)
 
 \item{bmat}{a matrix of effect sizes}
 
-\item{Sigma}{a single covariance matrix}
+\item{Sigma}{a 2n by 2n covariance matrix}
 }
 \description{
 Simulate bivariate phenotype with incorporation of random effects
