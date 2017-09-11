@@ -15,17 +15,6 @@ Vignettes are long form documentation commonly included in packages. Because the
 - Has a smaller default figure size
 - Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
 
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
 
 ## Figures
 
@@ -44,15 +33,8 @@ You can enable figure captions by `fig_caption: yes` in YAML:
 
 Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
 
-## More Examples
+## The linear mixed effects model
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+$$ vec(Y) = XB + vec(G) + vec(E)$$ where $Y$ is a n by 2 matrix of phenotypes, with one row per subject and one column per trait, $X$ is a 2n by 2f block diagonal matrix consisting of two n by f matrices, one for each of two loci. $n$ is the number of subjects and $f$ is the number of founders. $G$ is a n by 2 matrix of random effects, with $$G \sim MN(0, K, Vg)$$ where $MN(0, K, Vg)$ denotes the matrix-variate normal distribution with mean zero, row covariance $K$ and column covariance $Vg$. 
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
 
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
