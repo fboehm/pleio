@@ -19,7 +19,8 @@ Imports:
     MASS,
     broman,
     regress,
-    mvtnorm
+    mvtnorm,
+    lubridate
 Suggests: testthat,
     knitr,
     rmarkdown
