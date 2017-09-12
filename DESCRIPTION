@@ -2,9 +2,9 @@ Package: pleiotropy
 Type: Package
 Title: Likelihood ratio test to distinguish pleiotropy from linkage
 Version: 0.1.0
-Authors@R: person("Fred", "Boehm", email = "frederick.boehm@gmail.com",
+Authors@R: person("Frederick", "Boehm", email = "frederick.boehm@gmail.com",
                   role = c("aut", "cre"))
-Maintainer: Fred Boehm <frederick.boehm@gmail.com>
+Maintainer: Frederick Boehm <frederick.boehm@gmail.com>
 Description: These functions arose during my initial efforts to discern pleiotropy from close linkage.
 License: MIT License + file LICENSE
 Encoding: UTF-8
