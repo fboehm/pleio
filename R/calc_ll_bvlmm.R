@@ -3,14 +3,14 @@
 #' @param yvec a vector of phenotype values, after removing NA values
 #' @param Xmat a design matrix with needed number of rows
 #' @param betahat estimate of beta; a vector of length 16
-#' @param var a covariance matrix with needed dimensions
+#' @param Vg 2 by 2 Vg matrix
+#' @param Ve 2 by 2 Ve matrix
+#' @param Kmat kinship matrix, for appropriate chromosome
 #' @export
 
-calc_ll_bvlmm <- function(yvec, Xmat, betahat, var){
-  length(yvec) -> n
-  c_term <- - n * log(2 * pi) / 2
-  logdet_term <- - log(det(var)) / 2
-  res_term <- - t(yvec - Xmat %*% betahat) %*% solve(var) %*% (yvec - Xmat %*% betahat) / 2
-  return(c_term + logdet_term + res_term)
+calc_ll_bvlmm <- function(yvec, Xmat, betahat, Vg, Ve, Kmat){
+  n <- nrow(Kmat)
+  In <- diag(1, n)
+  mvtnorm::dmvnorm(yvec, mean = Xmat %*% betahat, sigma = Vg %x% Kmat + Ve %x% In)
 }
 

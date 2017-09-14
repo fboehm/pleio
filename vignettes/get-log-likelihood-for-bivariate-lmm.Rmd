@@ -9,32 +9,33 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
 ## The linear mixed effects model
 
-$$ vec(Y) = XB + vec(G) + vec(E)$$ where $Y$ is a n by 2 matrix of phenotypes, with one row per subject and one column per trait, $X$ is a 2n by 2f block diagonal matrix consisting of two n by f matrices, one for each of two loci. $n$ is the number of subjects and $f$ is the number of founders. $G$ is a n by 2 matrix of random effects, with $$G \sim MN(0, K, Vg)$$ where $MN(0, K, Vg)$ denotes the matrix-variate normal distribution with mean zero, row covariance $K$ and column covariance $Vg$. 
+$$ vec(Y) = XB + vec(G) + vec(E)$$ where $Y$ is a n by 2 matrix of phenotypes, with one row per subject and one column per trait, $X$ is a 2n by 2f block diagonal matrix consisting of two n by f matrices, one for each of two loci. $n$ is the number of subjects and $f$ is the number of founders. $G$ is a n by 2 matrix of random effects, with $$G \sim MN(0, K, V_g)$$ where $MN(0, K, V_g)$ denotes the matrix-variate normal distribution with mean zero, row covariance $K$ and column covariance $V_g$. $E$ is a n by 2 matrix of random errors with one row per subject and one trait per column. We assume that $$E \sim MN(0, I_n, V_e)$$
 
+## Load DO Data
+
+```{r}
+library(pleiotropy)
+library(dplyr)
+# load packages
+library(broman) # contains the winsorize() function
+library(tidyverse)
+# load data
+### genotype probabilities ("probs") in form used by R/qtl2
+### see ../R/0_DOQTLprobs2qtl2.R for how they were converted
+PATH_TO_DERIVED_DATA <- "~/Box Sync/attie/attiedo"
+PATH_TO_DERIVED_DATA <- "~/attie"
+load(file.path(PATH_TO_DERIVED_DATA, "DerivedData/GM_Attie_allele_call_haploprobs_4qtl2_wave5.Rdata"))
+### clinical phenotypes + phenotype dictionary
+### ("pheno_clin" and "pheno_clin_dict")
+load(file.path(PATH_TO_DERIVED_DATA, "DerivedData/pheno_clin.RData"))
+### kinship matrices ("loco" method) ("K")
+load(file.path(PATH_TO_DERIVED_DATA, "DerivedData/kinship.RData"))
+### covariate matrix ("covar")
+#load(file.path(PATH_TO_DERIVED_DATA, "DerivedData/covar.RData"))
+### physical map of the markers in the probs array
+load(file.path(PATH_TO_DERIVED_DATA, "DerivedData/probs_pmap.RData"))
+
+```
 

@@ -4,7 +4,7 @@
 \alias{calc_ll_bvlmm}
 \title{Calculate log-likelihood for a bivariate LMM}
 \usage{
-calc_ll_bvlmm(yvec, Xmat, betahat, var)
+calc_ll_bvlmm(yvec, Xmat, betahat, Vg, Ve, Kmat)
 }
 \arguments{
 \item{yvec}{a vector of phenotype values, after removing NA values}
@@ -13,7 +13,11 @@ calc_ll_bvlmm(yvec, Xmat, betahat, var)
 
 \item{betahat}{estimate of beta; a vector of length 16}
 
-\item{var}{a covariance matrix with needed dimensions}
+\item{Vg}{2 by 2 Vg matrix}
+
+\item{Ve}{2 by 2 Ve matrix}
+
+\item{Kmat}{kinship matrix, for appropriate chromosome}
 }
 \description{
 Calculate log-likelihood for a bivariate LMM
