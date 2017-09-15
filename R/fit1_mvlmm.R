@@ -14,10 +14,7 @@
 fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.0000001, maxcyc = 100, verbose = 10, start = c(0.1, 0.1, 0, 1, 1, 0), taper = rep(1 / 2, maxcyc)){
   # assemble Xmat design matrix
   n <- nrow(Y)
-  n_founders <- ncol(X1)
-  Xmat <- matrix(0, nrow = 2 * n, ncol = 2 * n_founders)
-  Xmat[1:n, 1:n_founders] <- X1
-  Xmat[(n + 1):(2 * n), (n_founders + 1):(2 * n_founders)] <- X2
+  Xmat <- pleiotropy::stagger_mats(X1, X2)
   # fit mvlmm
   In <- diag(1, n)
   V1 <- matrix(c(1, 0, 0, 0), nrow = 2)
