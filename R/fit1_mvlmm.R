@@ -11,7 +11,7 @@
 #' @param taper value of taper passed to regress()
 #' @export
 
-fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.0000001, maxcyc = 100, verbose = 10, start = c(0.1, 0.1, 0, 1, 1, 0), taper = rep(1 / 2, maxcyc)){
+fit1_bvlmm <- function(Y, X1, X2, Kmat, tol = 0.00001, maxcyc = 100, verbose = 10, start = c(0.1, 0.1, 0, 1, 1, 0), taper = rep(1 / 2, maxcyc)){
   # assemble Xmat design matrix
   n <- nrow(Y)
   Xmat <- pleiotropy::stagger_mats(X1, X2)
