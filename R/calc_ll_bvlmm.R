@@ -11,6 +11,10 @@
 calc_ll_bvlmm <- function(yvec, Xmat, betahat, Vg, Ve, Kmat){
   n <- nrow(Kmat)
   In <- diag(1, n)
-  mvtnorm::dmvnorm(yvec, mean = Xmat %*% betahat, sigma = Vg %x% Kmat + Ve %x% In)
+  mvtnorm::dmvnorm(yvec, 
+                   mean = Xmat %*% betahat, 
+                   sigma = Vg %x% Kmat + Ve %x% In, 
+                   log = TRUE
+                   )
 }
 
